@@ -1,9 +1,10 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe, library_prefixes
+
+import 'package:camera_deep_ar/camera_deep_ar.dart';
 import 'package:face_filters/widgets/alert.dart';
 import 'package:flutter/material.dart';
-import 'package:camera_deep_ar/camera_deep_ar.dart';
 import 'dart:io' as Platform;
 import 'package:avatar_view/avatar_view.dart';
-import '../secrets.dart';
 import '../widgets/error.dart';
 
 class CameraMasksFilters extends StatefulWidget {
@@ -36,7 +37,8 @@ class _CameraMasksFiltersState extends State<CameraMasksFilters> {
           children: [
             // Deep AR Camera
             CameraDeepAr(
-              androidLicenceKey: AndroidLicenseKey,
+              androidLicenceKey:
+                  "1a8d14492b8785f27be4cd2280200ebf92b1222a38321c63f973f0f7844b9dc43ae4ad2691152b8a",
               onCameraReady: (isReady) {
                 platformVersion = "Camera status $isReady";
                 // print(platformVersion);
@@ -54,7 +56,7 @@ class _CameraMasksFiltersState extends State<CameraMasksFilters> {
               cameraDeepArCallback: (c) async {
                 _cameraDeepArController = c;
                 setState(() {});
-              },
+              }, iosLicenceKey: '',
             ),
             // Face Mask filters - IconButtons
             Align(
